@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portafolio profesional de Jaider Guisamano — SQL, PostgreSQL, administración de bases de datos, backend y análisis de datos.">
+  <title>JAIDER ENRIQUE GUISAMANO ESPAÑA | SQL · Database · Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="grid-bg"></div>
+  <div class="cursor-glow"></div>
+
+  <header class="navbar">
+    <a href="#inicio" class="logo"><span>DB</span><b>JAIDER GuISAMANO INGENIERO DE SISTEMA </b></a>
+
+    <button class="menu-btn" aria-label="Abrir menú">☰</button>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#perfil">Perfil</a>
+      <a href="#stack">Stack</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#certificados">Certificados</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero section">
+      <div class="hero-copy reveal">
+        <div class="header-status-group">
+          <div class="status"><i></i> DATABASE SYSTEM ONLINE</div>
+
+          <!-- Enlaces a redes / perfiles -->
+          <div class="social-links-group">
+            <a href="https://github.com/JeGe-Papo" target="_blank" rel="noopener noreferrer" class="profile-link">
+              <i class="fa-brands fa-github"></i> Perfil GitHub ↗
+            </a>
+            <a href="https://www.linkedin.com/in/jaider-enrique-guisamano-españa-437271417" target="_blank"
+              rel="noopener noreferrer" class="profile-link linkedin">
+              <i class="fa-brands fa-linkedin"></i> Perfil LinkedIn ↗
+            </a>
+          </div>
+
+          <!-- Subtítulo o Specialties -->
+          <p class="hero-tagline">SQL · DATABASE ADMINISTRATION · DATA · Power By</p>
+        </div>
+      </div>
+
+      <p class="eyebrow">SQL · DATABASE ADMINISTRATION · DATA</p>
+      <h1>Datos organizados.<br><span>Decisiones inteligentes.</span></h1>
+      <p class="hero-text">
+        Soy <strong>JAIDER ENRIQUE GUISAMANO ESPAÑA </strong>, INGENIERO DE SISTEMA orientado a SQL,
+        bases de datos, Power BI y
+        análisis de información,
+        con conocimientos en desarrollo backend. Me enfoco en transformar datos complejos en soluciones claras,
+        confiables y útiles para apoyar
+        la toma de decisiones. Cuento con experiencia trabajando con bases de datos relacionales, consultas SQL,
+        análisis de datos y construcción
+        de soluciones tecnológicas, combinando el análisis con una visión práctica del desarrollo de sistemas.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="assets/CV.pdf" download>Descargar CV <b>↓</b></a>
+        <a class="btn whatsapp" <a class="btn whatsapp"
+          href="https://wa.me/573155858675?text=Hola%20Jaider,%20quiero%20hablar%20contigo." target="_blank"
+          rel="noopener">WhatsApp ↗</a>
+        <a class="btn ghost" href="#proyectos">Ver proyectos</a>
+      </div>
+
+      <div class="db-stats">
+        <div><b>SQL</b><span>Consultas & modelado</span></div>
+        <div><b>DB</b><span>Administración</span></div>
+        <div><b>DATA</b><span>Análisis</span></div>
+        <div><b>POWER BY</b><span>Análisis</span></div>
+      </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="orbit orbit-1"></div>
+        <div class="orbit orbit-2"></div>
+        <div class="orbit orbit-3"></div>
+
+        <div class="profile-card">
+          <div class="scan-line"></div>
+          <div class="profile-photo-wrap">
+            <img src="assets/profile.jpg" alt="Foto de JAIDER GUISAMANO" class="profile-photo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+            <div class="photo-fallback">JG</div>
+          </div>
+          <h2>JAIDER GUISAMANO</h2>
+          <p class="role">SQL · DATABASE · DATA · Power By </p>
+
+          <div class="terminal-mini">
+            <p><span class="purple">$</span> whoami</p>
+            <p class="cyan">database_specialist</p>
+            <p><span class="purple">$</span> status</p>
+            <p class="green">● open_to_work</p>
+          </div>
+
+          <div class="profile-bottom">
+            <span>PostgreSQL</span><span>SQL</span><span>Python</span><span>Power by</span><span>java</span>
+          </div>
+        </div>
+
+        <div class="floating-chip chip-1">SELECT * FROM users;</div>
+        <div class="floating-chip chip-2">✓ BACKUP COMPLETE</div>
+        <div class="floating-chip chip-3">PostgreSQL</div>
+        <div class="floating-chip chip-5">Power by</div>
+
+        <!-- Chip con el span id para el contador dinámico -->
+        <div class="floating-chip chip-4">
+          <span id="queryCounter">0.000</span>s query
+        </div>
+      </div>
+
+      <!-- Script del contador infinito -->
+      <script>
+        (function () {
+          function startInfiniteCounter() {
+            const el = document.getElementById('queryCounter');
+            if (!el) return;
+
+            function runCycle() {
+              // Genera un tiempo de consulta aleatorio entre 0.012s y 0.048s
+              const target = Math.random() * (0.048 - 0.012) + 0.012;
+              const duration = 500; // Duración de subida del número en ms
+              const start = performance.now();
+
+              function step(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const val = progress * target;
+
+                el.textContent = val.toFixed(3);
+
+                if (progress < 1) {
+                  requestAnimationFrame(step);
+                } else {
+                  // Espera 1.2 segundos y simula una nueva consulta
+                  setTimeout(runCycle, 1200);
+                }
+              }
+
+              requestAnimationFrame(step);
+            }
+
+            runCycle();
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', startInfiniteCounter);
+          } else {
+            startInfiniteCounter();
+          }
+        })();
+
+      </script>
+
+    </section>
+
+    <section id="perfil" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">01 / PERFIL</p>
+        <h2>Mi enfoque es el<br><span>dato confiable.</span></h2>
+      </div>
+
+      <div class="profile-grid">
+        <article class="info-card reveal">
+          <div class="card-icon">▣</div>
+          <h3>Administración DB</h3>
+          <p>Organización, mantenimiento, respaldos, usuarios, permisos y buenas prácticas para bases de datos.</p>
+          <span class="card-tag">DATABASE</span>
+        </article>
+        <article class="info-card reveal">
+          <div class="card-icon">⌘</div>
+          <h3>SQL & Modelado</h3>
+          <p>Consultas, joins, subconsultas, agregaciones, relaciones, normalización y diseño de estructuras.</p>
+          <span class="card-tag">SQL</span>
+        </article>
+        <article class="info-card reveal">
+          <div class="card-icon">◈</div>
+          <h3>Análisis de Datos</h3>
+          <p>Preparación y exploración de información para detectar patrones y apoyar decisiones Modelado de datos, DAX
+            y creación de tableros interactivos y dashboard.</p>
+          <span class="card-tag">DATA</span>
+        </article>
+        <article class="info-card reveal">
+          <div class="card-icon">↯</div>
+          <h3>Backend & APIs</h3>
+          <p>Conexión entre aplicaciones y bases de datos mediante servicios backend y APIs REST.</p>
+          <span class="card-tag">BACKEND</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">02 / TECNOLOGÍAS</p>
+        <h2>Mi entorno de<br><span>trabajo.</span></h2>
+      </div>
+
+      <div class="tech-grid">
+        <article class="tech-card featured reveal">
+          <div class="tech-logo"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+              alt="PostgreSQL"></div>
+          <div><small>DATABASE</small>
+            <h3>PostgreSQL</h3>
+            <p>Diseño, consultas, relaciones y administración de bases relacionales.</p>
+          </div><b class="level">PRINCIPAL</b>
+        </article>
+
+        <article class="tech-card reveal">
+          <div class="tech-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+          </div>
+          <div>
+            <small>BUSINESS INTELLIGENCE</small>
+            <h3>Power BI Desktop</h3>
+            <p>Modelado de datos, DAX y creación de tableros interactivos.</p>
+          </div>
+          <b class="level">BI</b>
+        </article>
+
+        <article class="tech-card reveal">
+          <div class="tech-logo"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL">
+          </div>
+          <div><small>DATABASE</small>
+            <h3>MySQL</h3>
+            <p>Consultas, estructuras y administración de bases relacionales.</p>
+          </div><b class="level">SQL</b>
+        </article>
+
+        <article class="tech-card reveal">
+          <div class="tech-logo"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+          </div>
+          <div><small>DATA</small>
+            <h3>Python</h3>
+            <p>Automatización, análisis y procesamiento de información.</p>
+          </div><b class="level">DATA</b>
+        </article>
+
+        <article class="tech-card reveal">
+          <div class="tech-logo"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"></div>
+          <div><small>PROGRAMMING</small>
+            <h3>Java</h3>
+            <p>Programación orientada a objetos y desarrollo de aplicaciones.</p>
+          </div><b class="level">DEV</b>
+        </article>
+
+        <article class="tech-card reveal">
+          <div class="tech-logo"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker">
+          </div>
+          <div><small>INFRASTRUCTURE</small>
+            <h3>Docker</h3>
+            <p>Contenedores y entornos reproducibles para servicios y bases de datos.</p>
+          </div><b class="level">OPS</b>
+        </article>
+      </div>
+
+      <div class="sql-console reveal">
+        <div class="console-head"><span>query.sql</span><span>PostgreSQL · production</span></div>
+        <pre><span class="purple">SELECT</span> department, <span class="cyan">COUNT</span>(*) <span class="purple">AS</span> total
+<span class="purple">FROM</span> employees
+<span class="purple">WHERE</span> status = <span class="green">'ACTIVE'</span>
+<span class="purple">GROUP BY</span> department
+<span class="purple">ORDER BY</span> total <span class="purple">DESC</span>;</pre>
+        <div class="console-result">✓ 12 rows returned <span>|</span> execution time: 18 ms <span>|</span> status:
+          SUCCESS</div>
+      </div>
+    </section>
+
+    <section class="section workflow">
+      <div class="section-heading reveal">
+        <p class="eyebrow">03 / CÓMO TRABAJO</p>
+        <h2>Del problema al<br><span>dato útil.</span></h2>
+      </div>
+      <div class="workflow-line">
+        <div class="workflow-step reveal"><b>01</b><span>ANALIZAR</span>
+          <p>Entender el problema y los datos disponibles.</p>
+        </div>
+        <div class="workflow-step reveal"><b>02</b><span>MODELAR</span>
+          <p>Diseñar estructuras, relaciones y reglas.</p>
+        </div>
+        <div class="workflow-step reveal"><b>03</b><span>CONSTRUIR</span>
+          <p>Crear consultas, servicios y soluciones.</p>
+        </div>
+        <div class="workflow-step reveal"><b>04</b><span>OPTIMIZAR</span>
+          <p>Validar, mejorar y mantener el sistema.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">04 / PROYECTOS</p>
+        <h2>Proyectos donde el<br><span>dato importa.</span></h2>
+      </div>
+      <div class="projects">
+        <!-- 01 BarberFlow (Privado/Principal) -->
+        <article class="project reveal">
+          <div class="project-top"><span>01</span><b>DATABASE + BACKEND</b></div>
+          <h3>BarberFlow</h3>
+          <p>Sistema de reservas y gestión con PostgreSQL, Prisma y NestJS. Clientes, servicios, barberos, horarios y
+            reservas.</p>
+          <div class="tags"><span>PostgreSQL</span><span>Prisma</span><span>NestJS</span></div>
+
+          <!-- Grupo de botones -->
+          <div class="project-buttons">
+            <a href="https://github.com/JeGe-Papo" target="_blank" rel="noopener noreferrer" class="project-link">
+              <i class="fa-brands fa-github"></i> Perfil GitHub ↗
+            </a>
+            <a href="https://wa.me/573155858675?text=Hola%20Jaider,%20me%20interesa%20conocer%20más%20sobre%20el%20proyecto%20BarberFlow"
+              target="_blank" rel="noopener noreferrer" class="project-link whatsapp-btn">
+              <i class="fa-brands fa-whatsapp"></i> Solicitar Código ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- 02 Python Predicción de Ventas -->
+        <article class="project reveal">
+          <div class="project-top"><span>02</span><b>DATA SCIENCE</b></div>
+          <h3>Python - Predicción Ventas</h3>
+          <p>Modelado predictivo y análisis de datos en Jupyter Notebook para la estimación y proyección de ventas.</p>
+          <div class="tags"><span>Python</span><span>Jupyter</span><span>Pandas</span></div>
+          <a href="https://github.com/JeGe-Papo/Python-Prediccion-Ventas" target="_blank" rel="noopener noreferrer"
+            class="project-link">Ver proyecto ↗</a>
+
+        </article>
+
+        <!-- 03 Mercado Laboral Colombia -->
+        <article class="project reveal">
+          <div class="project-top"><span>03</span><b>BUSINESS INTELLIGENCE</b></div>
+          <h3>Power BI - Mercado Laboral</h3>
+          <p>Dashboard interactivo desarrollado en Power BI para analizar la evolución del mercado laboral colombiano
+            con datos del DANE.</p>
+          <div class="tags"><span>Power BI</span><span>DAX</span><span>DANE</span></div>
+          <a href="https://github.com/JeGe-Papo/PowerBI-Mercado-Laboral-Colombia" target="_blank"
+            rel="noopener noreferrer" class="project-link">Ver proyecto ↗</a>
+        </article>
+
+        <!-- 04 Análisis SQL de Ventas -->
+        <article class="project reveal">
+          <div class="project-top"><span>04</span><b>DATABASE ANALYTICS</b></div>
+          <h3>Análisis SQL de Ventas</h3>
+          <p>Procesamiento y consultas estructuradas en SQL junto a Python para extracción de métricas comerciales y
+            hábitos de consumo.</p>
+          <div class="tags"><span>SQL</span><span>Python</span><span>Data</span></div>
+          <a href="https://github.com/JeGe-Papo/An-lisis-SQL-de-Ventas" target="_blank" rel="noopener noreferrer"
+            class="project-link">Ver proyecto ↗</a>
+        </article>
+
+        <!-- 05 Power BI Ventas Nacionales -->
+        <article class="project reveal">
+          <div class="project-top"><span>05</span><b>BUSINESS INTELLIGENCE</b></div>
+          <h3>Power BI Ventas Nacionales</h3>
+          <p>Dashboard para análisis de rentabilidad, ventas e indicadores clave de desempeño (KPIs) a nivel nacional.
+          </p>
+          <div class="tags"><span>Power BI</span><span>DAX</span><span>KPIs</span></div>
+          <a href="https://github.com/JeGe-Papo/PowerBI-Ventas-Nacionales" target="_blank" rel="noopener noreferrer"
+            class="project-link">Ver proyecto ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="certificados" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">05 / CERTIFICADOS</p>
+        <h2>Formación que puedes<br><span>comprobar.</span></h2>
+      </div>
+      <div class="certificate-toolbar reveal">
+        <input id="search" type="search" placeholder="Buscar certificado...">
+        <select id="filter">
+          <option value="all">Todos</option>
+          <option value="u">Ingeniero de sistema</option>
+          <option value="co">Bachiller Tecnico </option>
+          <option value="se">certificados del sena </option>
+          <option value="cer">Certificado de ingles </option>
+          <option value="di">Diploma Métodos Estadísticos </option>
+          <option value="andi">Conferencias</option>
+          <option value="other">Otros</option>
+        </select>
+      </div>
+
+      <div class="cert-grid" id="certGrid">
+        <article class="cert-card reveal" data-cat="u" data-name="ingeniero de sistema">
+          <div class="cert-icon">
+            <img src="assets/R.png" alt="Logo Universidad ">
+          </div>
+          <div><small>Universidad De Nariño </small>
+            <h3>Ingeniero De Sistemas </h3>
+            <p>2020-2026 </p>
+          </div>
+          <a href="assets/.......pdf" target="_blank">Abrir PDF ↗</a>
+        </article>
+
+        <div class="cert-grid" id="certGrid">
+          <article class="cert-card reveal" data-cat="di" data-name="diploma">
+            <div class="cert-icon">
+              <img src="assets/R.png" alt="Logo Universidad ">
+            </div>
+            <div><small>Universidad De Nariño </small>
+              <h3>Diploma de Métodos Estadístico Para La investigación </h3>
+              <p>2026 </p>
+            </div>
+            <a href="assets/DM.pdf" target="_blank">Abrir PDF ↗</a>
+          </article>
+
+          <article class="cert-card reveal" data-cat="sql" data-name="sql bases datos">
+            <div class="cert-icon">
+              <img src="assets/es.png" alt="Logo Colegio ITIN">
+            </div>
+            <div><small>Colegio Itin</small>
+              <h3>Diploma Bachiller Tecnico </h3>
+              <p>2019 </p>
+            </div>
+            <a href="assets/BT.pdf" target="_blank">Abrir PDF ↗</a>
+          </article>
+
+          <article class="cert-card reveal" data-cat="cer" data-name="certificado de ingles ">
+            <div class="cert-icon">
+              <img src="assets/R.png" alt="Logo Universidad ">
+            </div>
+            <div><small>Certificado</small>
+              <h3>Certificado de Ingles</h3>
+              <p>2023</p>
+            </div>
+            <a href="assets/Ingle.pdf" target="_blank">Abrir PDF ↗</a>
+          </article>
+
+          <article class="cert-card reveal" data-cat="se" data-name="certificados sena  ">
+            <div class="cert-icon">
+              <img src="assets/S.jpg" alt="Logo Universidad ">
+            </div>
+            <div><small>Certificados </small>
+              <h3>Certificado Sena Android Studio Y Wordpres</h3>
+              <p>2023</p>
+            </div>
+            <!-- Contenedor con los dos PDFs -->
+            <div class="pdf-buttons-group">
+              <a href="assets/SenAnd.pdf" target="_blank" class="pdf-link">
+                <i class="fa-solid fa-file-pdf"></i> PDF Android studio ↗
+              </a>
+              <a href="assets/SenWorp.pdf" target="_blank" class="pdf-link">
+                <i class="fa-solid fa-file-pdf"></i> PDF WordPress ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="cert-card reveal" data-cat="andi" data-name="certificado de Conferencias ">
+            <div class="cert-icon">
+              <img src="assets/R.png" alt="Logo Universidad ">
+            </div>
+            <div><small>Certificado Congreso</small>
+              <h3>Certificado de Congreso</h3>
+              <p>2021-2023</p>
+            </div>
+            <a href="assets/Andi.pdf" target="_blank">Abrir PDF ↗</a>
+          </article>
+
+          <article class="cert-card reveal" data-cat="other" data-name="certificacion">
+            <div class="cert-icon">+</div>
+            <div><small>OTROS</small>
+              <h3>certificación</h3>
+              <p>Universidad Nacional · 2017</p>
+              <p>defensa civil · 2018</p>
+
+            </div>
+            <a href="assets/otros.pdf" target="_blank">Abrir PDF ↗</a>
+          </article>
+        </div>
+        <p id="empty" class="empty">No se encontraron certificados.</p>
+    </section>
+
+    <section id="contacto" class="section contact">
+      <div class="contact-box reveal">
+        <div>
+          <p class="eyebrow">06 / CONTACTO</p>
+          <h2>Hablemos de<br><span>datos y oportunidades.</span></h2>
+          <p>Si necesitas apoyo con bases de datos, SQL, sistemas o análisis de información, puedes contactarme
+            directamente.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn whatsapp" href="https://wa.me/573155858675?text=Hola%20Jaider,%20quiero%20hablar%20contigo."
+            target="_blank" rel="noopener">WhatsApp ↗</a>
+          <a class="btn ghost" href="mailto:ejaider11tres@gmail.com">ejaider11tres@gmail.com</a>
+          <a class="btn primary" href="assets/CV.pdf" download>Descargar CV ↓</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 JAIDER GUISAMANO · SQL / DATABASE / DATA</span>
+    <a href="#inicio">↑ Volver arriba</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
